@@ -6,10 +6,10 @@ import { Container, Row } from "react-bootstrap";
 import Options from "../Options/Options";
 import "./ExamQuetions.css";
 
-const ExamQuestion = ({ allQuestion, index }) => {
+const ExamQuestion = ({ allQuestion, index, showToastMessage }) => {
   const { options, id, question, correctAnswer } = allQuestion;
   const chekcCorrectAnswer = () => {
-    alert(correctAnswer);
+    alert("Correct Answer is: " + correctAnswer);
   };
   return (
     <div className="my-5 mx-auto examquestion">
@@ -30,6 +30,7 @@ const ExamQuestion = ({ allQuestion, index }) => {
               key={index}
               correctAnswer={correctAnswer}
               option={option}
+              showToastMessage={showToastMessage}
             ></Options>
           ))}
         </Row>

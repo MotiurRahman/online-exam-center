@@ -1,10 +1,12 @@
 import React from "react";
 import { Col } from "react-bootstrap";
 
-const Options = ({ option, correctAnswer }) => {
+const Options = ({ option, correctAnswer, showToastMessage }) => {
   const handleOptionClick = (answer) => {
     if (correctAnswer === answer) {
-      alert("This answer is correct");
+      showToastMessage("Your Answer is Correct");
+    } else {
+      showToastMessage("Your Answer is Wrong");
     }
   };
   return (
@@ -15,11 +17,11 @@ const Options = ({ option, correctAnswer }) => {
         className="border rounded border-primary mt-4 d-flex align-items-center p-1"
       >
         <input
-          className="form-check-input ms-2"
+          className="form-check-input mx-1"
           type="radio"
           name="flexRadioDefault"
         ></input>
-        <p className="mb-0 ms-2">{option}</p>
+        <p className="mb-0">{option}</p>
       </label>
     </Col>
   );
