@@ -1,0 +1,9 @@
+.examquestion {
+  width: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+  .examquestion {
+    width: 100%;
+  }
+}

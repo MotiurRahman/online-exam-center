@@ -1,5 +1,7 @@
 import React from "react";
-import { Col } from "react-bootstrap";
+import { Button, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "./Topics.css";
 
 const Topic = ({ topic }) => {
   const { id, logo, name, total } = topic;
@@ -11,7 +13,11 @@ const Topic = ({ topic }) => {
           <b>Name: </b>
           {name}({total})
         </p>
-        <button className="btn btn-success">Start Exam</button>
+        <Button variant="primary">
+          <Link className="btnStart" to={`api/online-exam/${id}`}>
+            Start Exam
+          </Link>
+        </Button>
       </div>
     </Col>
   );

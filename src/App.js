@@ -5,6 +5,7 @@ import Main from "./Layouts/Main";
 import Home from "./Components/Home/Home";
 import Statistics from "./Components/Statistics/Statistics";
 import Blogs from "./Components/Blogs/Blogs";
+import ExamDetails from "./Components/Home/ExamDetails/ExamDetails";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,17 @@ const router = createBrowserRouter([
         },
         element: <Home></Home>,
       },
+
+      {
+        path: "api/online-exam/:topicID",
+        loader: async ({ params }) => {
+          return fetch(
+            `https://openapi.programming-hero.com/api/quiz/${params.topicID}`
+          );
+        },
+        element: <ExamDetails></ExamDetails>,
+      },
+
       {
         path: "statistics",
         element: <Statistics></Statistics>,
