@@ -8,18 +8,29 @@ import "./ExamQuetions.css";
 
 const ExamQuestion = ({ allQuestion, index }) => {
   const { options, id, question, correctAnswer } = allQuestion;
+  const chekcCorrectAnswer = () => {
+    alert(correctAnswer);
+  };
   return (
     <div className="my-5 mx-auto examquestion">
       <div className="d-flex justify-content-between">
         <h6>
           Que {index}:{question}
         </h6>
-        <FontAwesomeIcon icon={faEye} />
+        <FontAwesomeIcon
+          style={{ cursor: "pointer" }}
+          onClick={chekcCorrectAnswer}
+          icon={faEye}
+        />
       </div>
       <Container className="mt-4">
         <Row>
           {options.map((option, index) => (
-            <Options key={index} option={option}></Options>
+            <Options
+              key={index}
+              correctAnswer={correctAnswer}
+              option={option}
+            ></Options>
           ))}
         </Row>
       </Container>

@@ -1,11 +1,17 @@
 import React from "react";
 import { Col } from "react-bootstrap";
 
-const Options = ({ option }) => {
+const Options = ({ option, correctAnswer }) => {
+  const handleOptionClick = (answer) => {
+    if (correctAnswer === answer) {
+      alert("This answer is correct");
+    }
+  };
   return (
     <Col xs={12} md={6}>
-      <div
-        style={{ height: "80px" }}
+      <label
+        onClick={() => handleOptionClick(option)}
+        style={{ height: "80px", cursor: "pointer" }}
         className="border rounded border-primary mt-4 d-flex align-items-center p-1"
       >
         <input
@@ -14,7 +20,7 @@ const Options = ({ option }) => {
           name="flexRadioDefault"
         ></input>
         <p className="mb-0 ms-2">{option}</p>
-      </div>
+      </label>
     </Col>
   );
 };
