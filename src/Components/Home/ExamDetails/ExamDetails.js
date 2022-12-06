@@ -7,7 +7,7 @@ const ExamDetails = () => {
   const examDetails = useLoaderData();
   const examQuestion = examDetails.data.questions;
   const [showToast, setshowToast] = useState(true);
-  const [message, setMessage] = useState("Select your Answer");
+  const [message, setMessage] = useState("Start your exam");
   const showToastMessage = (message) => {
     if (message == null) {
       setshowToast(false);

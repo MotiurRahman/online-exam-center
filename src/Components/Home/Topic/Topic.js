@@ -6,7 +6,7 @@ import "./Topics.css";
 const Topic = ({ topic }) => {
   const { id, logo, name, total } = topic;
   return (
-    <Col className="mt-3">
+    <Col xs={12} md={6} lg={3} className="mt-3">
       <img className="img-fluid bg-dark" src={logo} alt="" />
       <div className="d-flex justify-content-between m-3 align-items-center">
         <p>
